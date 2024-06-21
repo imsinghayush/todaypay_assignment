@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --clone-foreground-rgb-clone: 0, 0, 0;
+  --clone-background-start-rgb-clone: 214, 219, 220;
+  --clone-background-end-rgb-clone: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clone-foreground-rgb-clone: 255, 255, 255;
+    --clone-background-start-rgb-clone: 0, 0, 0;
+    --clone-background-end-rgb-clone: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--clone-foreground-rgb-clone));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--clone-background-end-rgb-clone))
+    )
+    rgb(var(--clone-background-start-rgb-clone));
+}
+
+@layer utilities {
+  .clone-text-balance-clone {
+    text-wrap: balance;
+  }
+}
+
